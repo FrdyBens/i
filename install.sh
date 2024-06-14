@@ -5,27 +5,6 @@ sudo apt update
 sudo apt upgrade -y
 
 # Prepare installation directory
-mkdir -p ~/cy_install
-cd ~/cy_install
-
-# Clone CyberPanel repository
-git clone https://github.com/FrdyBens/cyberpanel.git
-cd cyberpanel
-
-# Make installation script executable
-chmod +x install_cyberpanel.sh
-
-# Run CyberPanel installation script
-./install_cyberpanel.sh
-
-# Install Python dependencies for CyberPanel
-sudo apt install -y $(grep -v '^#' requirements.txt)
-
-# Notify user that CyberPanel installation is complete
-echo "CyberPanel installation and setup completed."
-
-# Navigate back to the home directory
-cd ../
 
 # Clone workspaces-images repository
 git clone https://github.com/kasmtech/workspaces-images.git
@@ -115,3 +94,16 @@ for container in "${n1}" "${n2}" "${n3}" "${n4}" "${n5}" "${n6}"; do
             ;;
     esac
 done
+
+
+mkdir -p ~/cy_install
+cd ~/cy_install
+
+sudo su - -c "sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)"
+
+# Notify user that CyberPanel installation is complete
+echo "CyberPanel installation and setup completed."
+
+# Navigate back to the home directory
+cd ../
+
