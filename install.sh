@@ -4,16 +4,6 @@
 sudo apt update
 sudo apt upgrade -y
 
-# Install system dependencies
-sudo apt install -y docker-ce curl wget
-
-# Install Python and dependencies
-sudo apt install -y python3 python3-pip
-sudo pip3 install pyperclip
-
-# Install tkinter package for Python (if not already installed)
-sudo apt install -y python3-tk
-
 # Prepare installation directory
 mkdir -p ~/cy_install
 cd ~/cy_install
@@ -35,7 +25,7 @@ sudo apt install -y $(grep -v '^#' requirements.txt)
 echo "CyberPanel installation and setup completed."
 
 # Navigate back to the home directory
-cd ~
+cd ../
 
 # Clone workspaces-images repository
 git clone https://github.com/kasmtech/workspaces-images.git
