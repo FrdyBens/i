@@ -21,4 +21,4 @@ cd ~/i/workspaces-images
 cd workspaces-images
 
 
-sudo docker run --rm -d -it --shm-size=512m -p 6901:6901 -e VNC_PW=password kasmweb/firefox:dev
+sudo docker run --rm -d -it --shm-size=512m -p 6901:6901 -e VNC_PW=password kasmweb/brave:1.15.0-rolling
