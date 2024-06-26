@@ -3,9 +3,9 @@
 
 
 
-sudo apt install apache2
+sudo apt install -y apache2
 #install mysql
-sudo apt install mysql-server
+sudo apt install -y mysql-server
 #remove any docker exsistance
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
 # Add Docker's official GPG key:
@@ -22,7 +22,7 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 #install docker
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 # git pull workspaces-images
 git clone https://github.com/kasmtech/workspaces-images.git /home/installs
 #install portainer to a specific port
